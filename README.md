@@ -496,6 +496,43 @@ warpdemux demux [...] --save_boundaries true
 ```
 Note that increasing `max_obs_trace` will result in slower processing times, so consider the tradeoff between accuracy and speed based on your specific needs.
 
+## Parallel Processing
+
+WarpDemuX uses a multi-process architecture for parallel processing. When you specify the number of cores with `-j` (or `--ncores`), the following occurs:
+
+1. Main Process Pool: WarpDemuX creates a pool of worker processes equal to the number of cores you specify (`num_proc`).
+2. Additional Threads: The main process also spawns several threads for I/O operations (data loading, saving results, progress reporting).
+3. Library Threading: Each worker process uses scientific computing libraries (numpy, scipy, scikit-learn) that may spawn additional threads internally for BLAS (Basic Linear Algebra Subprograms) operations.
+
+BLAS is a library that provides optimized routines for linear algebra operations (matrix multiplication, dot products, etc.) used by several scientific computing libraries (numpy, scipy, scikit-learn). The threading behavior of these libraries depends on your system's BLAS configuration.
+
+### Potential Issues on Multi-User Systems
+
+On multi-user systems (e.g., HPC clusters with SLURM), this can lead to CPU oversubscription:
+
+- If you allocate 8 cores and set `-j 8`, you get 8 worker processes
+- If each worker process uses BLAS with multi-threading enabled you may end up with `k*n_cores` threads competing for `n_cores` cores, where `k` is the number of threads per process.
+- This can cause performance degradation and/or resource contention with other users
+
+### Recommendations
+
+1. **Set `num_proc` conservatively**: If you're allocated N cores, consider setting `-j` to N/2 or N/4 to account for library threading.
+
+2. **Control BLAS threading**: Set environment variables to limit threading in scientific libraries before running WarpDemuX:
+```{bash}
+   export OPENBLAS_NUM_THREADS=1
+   export MKL_NUM_THREADS=1
+   export OMP_NUM_THREADS=1
+   export BLIS_NUM_THREADS=1
+   export NUMEXPR_NUM_THREADS=1
+```
+Then you can safely set `-j` to your allocated number of cores.
+
+
+### Default Behavior
+
+By default, WarpDemuX does not restrict library threading. The actual number of threads may exceed the number of processes you specify, depending on your system's BLAS configuration and environment variables.
+
 ## Barcode-based adaptive sampling (Live Balancing)
 
 <details>
@@ -645,7 +682,7 @@ WarpDemuX has been tested on Ubuntu 20.04.6 LTS and Ubuntu 22.04.4 LTS, as well 
 ### Demux
 
 ```{bash}
-warpdemux demux -i [path/to/WarpDemuX]/test_data/demux/4000_rna004.pod5 -j 8
+warpdemux demux -i [path/to/WarpDemuX]/test_data/demux/4000_rna004.pod5 -j 8 -m WDX4_rna004_v0_4_4
 ```
 
 ### Live balancing
