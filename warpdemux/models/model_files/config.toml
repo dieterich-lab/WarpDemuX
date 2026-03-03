@@ -38,3 +38,9 @@ num_bcs = 4
 SQK = "RNA004"
 spc = "rna004_130bps@v1.0_tRNA"
 which_barcodes = [4, 5, 7, 11]
+
+[WDX4_rRNA_rna004_v1_0]
+num_bcs = 4
+SQK = "RNA004"
+spc = "rna004_130bps@v1.0_rRNA"
+which_barcodes = [3, 4, 5, 7]

@@ -1,5 +1,14 @@
 # WarpDemuX CHANGELOG
 
+## [v1.0.1] - 2026-03-03
+
+### Added
+
+- New models released:
+ - `WDX4_rRNA_rna004_v1_0`
+
+### Changed
+
 ## [v1.0.0] - 2025-12-22
 
 ### Changed
