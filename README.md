@@ -98,11 +98,11 @@ We recommend using the WDX4_tRNA_rna004_v1_0 model for Nano-tRNAseq data, which 
 |        3 (vs 11) | 0.995 (+1%) | 0.992 (+1%) | 99.380 (+7%) |
 <caption><b>WDX-tRNA performance metrics for WDX4_tRNA_rna004_v1_0 vs WDX4b_tRNA_rna004_v1_0.</b></caption>
 
-### WarpDemuX-rRNA: rRNAseq / sequence specific protocols
+### WarpDemuX-custom: sequence specific protocols (rRNAs, lnRNAs, ..)
 
 | Model Name | Chemistry | Library Type | # Samples | Barcodes Used |
 |------------|-----------|--------------|-----------|---------------|
-| WDX4_rRNA_rna004_v1_0 | RNA004 | rRNA / sequence specific | 4 | WDX_bc03, WDX_bc04, WDX_bc05, WDX_bc07 |
+| WDX4_rRNA_rna004_v1_0 | RNA004 | sequence specific | 4 | WDX_bc03, WDX_bc04, WDX_bc05, WDX_bc07 |
 
 ## Barcodes
 
