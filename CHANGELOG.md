@@ -1,6 +1,12 @@
 # WarpDemuX CHANGELOG
 
-## [v1.0.1] - 2026-03-03
+## [v1.2.0] - 2026-04-26
+
+### Changed
+
+- renamed `WDX4_rRNA_rna004_v1_0` to `WDX4_custom_rna004_v1_0` to better reflect the purpose of the model.
+
+## [v1.1.0] - 2026-03-03
 
 ### Added
 
