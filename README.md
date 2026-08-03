@@ -772,3 +772,7 @@ If WarpDemuX has been helpful for your research, please cite our work:
 > Demultiplexing and barcode-specific adaptive sampling for nanopore direct RNA sequencing  
 > van der Toorn W, Bohn P, Liu-Wei W, Olguin-Nava M, Smyth RP, von Kleist M  
 > *Nature Commun*, 16: 3742 (2025); doi: [https://doi.org/10.1038/s41467-025-59102-9](https://doi.org/10.1038/s41467-025-59102-9)
+>
+> WarpDemuX-tRNA: barcode multiplexing for nanopore tRNA sequencing
+> van der Toorn W, Naarmann-de Vries IS, Liu-Wei W, Dieterich Cm von Kleist M
+> *Nucleic Acids Research*, 53: gkaf873 (2025) doi: [https://doi.org/10.1093/nar/gkaf873](https://doi.org/10.1093/nar/gkaf873)
