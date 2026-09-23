@@ -102,7 +102,7 @@ We recommend using the WDX4_tRNA_rna004_v1_0 model for Nano-tRNAseq data, which 
 
 | Model Name | Chemistry | Library Type | # Samples | Barcodes Used |
 |------------|-----------|--------------|-----------|---------------|
-| WDX4_custom_rna004_v1_0 | RNA004 | sequence specific | 4 | WDX_bc03, WDX_bc04, WDX_bc05, WDX_bc07 |
+| WDX4_custom_rna004_v1_1 | RNA004 | sequence specific | 4 | WDX_bc03, WDX_bc04, WDX_bc05, WDX_bc07 |
 
 ## Barcodes
 
