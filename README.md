@@ -104,6 +104,18 @@ We recommend using the WDX4_tRNA_rna004_v1_0 model for Nano-tRNAseq data, which 
 |------------|-----------|--------------|-----------|---------------|
 | WDX4_custom_rna004_v1_1 | RNA004 | sequence specific | 4 | WDX_bc03, WDX_bc04, WDX_bc05, WDX_bc07 |
 
+The model is fitted on two sets of four in vitro transcribed RNAs. The metrics below are measured on a held-out test set of 104314 reads, after the per-class confidence thresholds are applied:
+
+|   WDX_bc | Precision | Recall | Recovery |
+|---------:|:----------|:-------|:---------|
+|        3 | 0.989     | 0.992  | 99.58    |
+|        4 | 0.991     | 0.992  | 99.31    |
+|        5 | 0.991     | 0.984  | 98.97    |
+|        7 | 0.990     | 0.991  | 99.01    |
+<caption><b>WDX-custom performance metrics for WDX4_custom_rna004_v1_1.</b></caption>
+
+The RTA design for sequence specific targets differs from the polyadenylated protocol. For the oligo sequences, please refer to the WarpDemuX-custom manuscript.
+
 ## Barcodes
 
 WarpDemuX uses custom barcode sequences embedded within the RTA (Reverse Transcription Adapter) during library preparation. 
